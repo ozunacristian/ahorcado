@@ -1,0 +1,48 @@
+.scenePlayer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.stickVertical,
+.stickHorizontal,
+.rope,
+.head,
+.body,
+.leftArm,
+.rightArm,
+.leftLeg,
+.rightLeg {
+  background-color: #000;
+}
+
+.stickHorizontal {
+  width: 20px;
+  height: 80px;
+}
+
+.stickVertical {
+  width: 80px;
+  height: 20px;
+}
+
+.rope {
+  width: 10px;
+  height: 30px;
+}
+
+.head {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.body {
+  width: 20px;
+  height: 60px;
+}
+.leftArm,
+.rightArm {
+  width: 8px;
+  height: 50px;
+}
