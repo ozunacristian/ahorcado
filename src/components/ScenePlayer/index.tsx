@@ -7,7 +7,11 @@ interface ScenePlayerProps {
 export default function ScenePlayer(props: Readonly<ScenePlayerProps>) {
   return (
     <>
-      <h2>{props.tries > 0 ? "You are still surviving" : "You are die"}</h2>
+      <h2>
+        {props.tries > 0
+          ? `You are still surviving ${props.tries}`
+          : "You are die"}
+      </h2>
       <div className="scenePlayer">
         <div
           className="stickHorizontal"
