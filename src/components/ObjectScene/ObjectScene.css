@@ -1,0 +1,71 @@
+.stickVertical,
+.stickHorizontal,
+.rope,
+.head,
+.body,
+.leftArm,
+.rightArm,
+.leftLeg,
+.rightLeg {
+  background-color: #000;
+}
+
+.stickHorizontal {
+  width: 200px;
+  height: 20px;
+  grid-area: stickHorizontal;
+}
+
+.stickVertical {
+  width: 20px;
+  height: 200px;
+  grid-area: stickVertical;
+}
+
+.rope {
+  width: 10px;
+  height: 30px;
+  grid-area: rope;
+  justify-self: center;
+}
+
+.head {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  grid-area: head;
+}
+
+.body {
+  width: 20px;
+  height: 60px;
+  grid-area: body;
+  justify-self: center;
+}
+.leftArm,
+.rightArm {
+  width: 8px;
+  height: 50px;
+}
+.leftLeg,
+.rightLeg {
+  width: 8px;
+  height: 50px;
+}
+
+.leftLeg {
+  grid-area: leftLeg;
+  transform: rotate(25deg) translate(40px, -15px);
+}
+.rightLeg {
+  grid-area: rightLeg;
+  transform: rotate(-25deg) translate(-10px, 0);
+}
+.leftArm {
+  grid-area: leftArm;
+  transform: rotate(25deg) translate(40px, -15px);
+}
+.rightArm {
+  grid-area: rightArm;
+  transform: rotate(-25deg) translate(-10px, 0);
+}
