@@ -31,6 +31,7 @@ export default function Board() {
       <span ref={textRef}></span>
 
       <input
+        disabled={tries === 0}
         type="text"
         onInput={handleOnInputPlayerInput}
         value={playerInput}
