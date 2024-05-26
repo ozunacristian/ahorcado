@@ -1,6 +1,7 @@
 interface KeyboardButtonProps {
   letter: string;
   setPlayerInput: (input: string) => void;
+  tries: number;
 }
 
 export default function KeyboardButton(props: Readonly<KeyboardButtonProps>) {
@@ -10,6 +11,7 @@ export default function KeyboardButton(props: Readonly<KeyboardButtonProps>) {
 
   return (
     <button
+      disabled={props.tries <= 0}
       className="keyboardButton"
       onClick={() => {
         handleOnClick(props.letter);
