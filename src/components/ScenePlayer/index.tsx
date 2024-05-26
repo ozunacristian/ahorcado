@@ -4,7 +4,7 @@ interface ScenePlayerProps {
   tries: number;
 }
 
-export default function ScenePlayer(props: ScenePlayerProps) {
+export default function ScenePlayer(props: Readonly<ScenePlayerProps>) {
   return (
     <>
       <h2>{props.tries > 0 ? "You are still surviving" : "You are die"}</h2>
