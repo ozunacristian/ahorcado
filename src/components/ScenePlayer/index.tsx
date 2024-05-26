@@ -1,10 +1,29 @@
 import "./ScenePlayer.css";
+import type { Part } from "../ObjectScene";
+import ObjectScene from "../ObjectScene";
 
 interface ScenePlayerProps {
   tries: number;
 }
 
+type PartObject = {
+  part: Part;
+  numberConditionToShow: number;
+};
+
 export default function ScenePlayer(props: Readonly<ScenePlayerProps>) {
+  const parts: PartObject[] = [
+    { part: "head", numberConditionToShow: 5 },
+    { part: "body", numberConditionToShow: 5 },
+    { part: "leftArm", numberConditionToShow: 5 },
+    { part: "rightArm", numberConditionToShow: 5 },
+    { part: "leftLeg", numberConditionToShow: 5 },
+    { part: "rightLeg", numberConditionToShow: 5 },
+    { part: "rope", numberConditionToShow: 5 },
+    { part: "stickVertical", numberConditionToShow: 5 },
+    { part: "stickHorizontal", numberConditionToShow: 5 },
+  ];
+
   return (
     <>
       <h2>
@@ -13,60 +32,15 @@ export default function ScenePlayer(props: Readonly<ScenePlayerProps>) {
           : "You are die"}
       </h2>
       <div className="scenePlayer">
-        <div
-          className="stickHorizontal"
-          style={{
-            backgroundColor: props.tries <= 8 ? "#000000" : "transparent",
-          }}
-        ></div>
-        <div
-          className="stickVertical"
-          style={{
-            backgroundColor: props.tries <= 7 ? "#000000" : "transparent",
-          }}
-        ></div>
-        <div
-          className="rope"
-          style={{
-            backgroundColor: props.tries <= 6 ? "#000000" : "transparent",
-          }}
-        ></div>
-        <div
-          className="head"
-          style={{
-            backgroundColor: props.tries <= 5 ? "#000000" : "transparent",
-          }}
-        ></div>
-        <div
-          className="body"
-          style={{
-            backgroundColor: props.tries <= 4 ? "#000000" : "transparent",
-          }}
-        ></div>
-        <div
-          className="leftArm"
-          style={{
-            backgroundColor: props.tries <= 3 ? "#000000" : "transparent",
-          }}
-        ></div>
-        <div
-          className="rightArm"
-          style={{
-            backgroundColor: props.tries <= 2 ? "#000000" : "transparent",
-          }}
-        ></div>
-        <div
-          className="leftLeg"
-          style={{
-            backgroundColor: props.tries <= 1 ? "#000000" : "transparent",
-          }}
-        ></div>
-        <div
-          className="rightLeg"
-          style={{
-            backgroundColor: props.tries <= 0 ? "#000000" : "transparent",
-          }}
-        ></div>
+        {parts.map((partObject) => {
+          return (
+            <ObjectScene
+              key={partObject.part}
+              {...partObject}
+              tries={props.tries}
+            />
+          );
+        })}
       </div>
     </>
   );
