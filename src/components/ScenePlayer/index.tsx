@@ -32,7 +32,7 @@ export default function ScenePlayer(props: Readonly<ScenePlayerProps>) {
               key={part}
               tries={props.tries}
               part={part}
-              numberConditionToShow={9 - index}
+              numberConditionToShow={8 - index}
             />
           );
         })}
