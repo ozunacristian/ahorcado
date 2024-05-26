@@ -12,4 +12,14 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+export const Default: Story = {
+  args: {
+    tries: 9,
+  },
+};
+
+export const Lost: Story = {
+  args: {
+    tries: 0,
+  },
+};
