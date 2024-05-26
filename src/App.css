@@ -3,4 +3,28 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  min-width: 100vw;
+  min-height: 100vh;
+
+  /* pattern */
+  background-color: #e5e5f7;
+  opacity: 0.8;
+
+  --color-lines: #c3c3c3;
+
+  background-image: linear-gradient(var(--color-lines) 2px, transparent 2px),
+    linear-gradient(90deg, var(--color-lines) 2px, transparent 2px),
+    linear-gradient(var(--color-lines) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-lines) 1px, #ffffff 1px);
+  background-size:
+    50px 50px,
+    50px 50px,
+    10px 10px,
+    10px 10px;
+  background-position:
+    -2px -2px,
+    -2px -2px,
+    -1px -1px,
+    -1px -1px;
 }
