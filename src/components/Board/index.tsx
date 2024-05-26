@@ -1,5 +1,6 @@
 import { ChangeEvent, useState, useRef, useEffect } from "react";
 import ScenePlayer from "../ScenePlayer";
+import "./Board.css";
 
 export default function Board() {
   const [playerInput, setPlayerInput] = useState("");
@@ -24,7 +25,7 @@ export default function Board() {
   }, [playerInput]);
 
   return (
-    <section>
+    <section className="mainSection">
       <ScenePlayer tries={tries} />
 
       <span ref={textRef}></span>
