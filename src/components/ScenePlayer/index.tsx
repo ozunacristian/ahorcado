@@ -5,23 +5,17 @@ import ObjectScene from "../ObjectScene";
 interface ScenePlayerProps {
   tries: number;
 }
-
-type PartObject = {
-  part: Part;
-  numberConditionToShow: number;
-};
-
 export default function ScenePlayer(props: Readonly<ScenePlayerProps>) {
-  const parts: PartObject[] = [
-    { part: "head", numberConditionToShow: 5 },
-    { part: "body", numberConditionToShow: 5 },
-    { part: "leftArm", numberConditionToShow: 5 },
-    { part: "rightArm", numberConditionToShow: 5 },
-    { part: "leftLeg", numberConditionToShow: 5 },
-    { part: "rightLeg", numberConditionToShow: 5 },
-    { part: "rope", numberConditionToShow: 5 },
-    { part: "stickVertical", numberConditionToShow: 5 },
-    { part: "stickHorizontal", numberConditionToShow: 5 },
+  const parts: Part[] = [
+    "stickVertical",
+    "stickHorizontal",
+    "rope",
+    "head",
+    "body",
+    "leftArm",
+    "rightArm",
+    "leftLeg",
+    "rightLeg",
   ];
 
   return (
@@ -32,12 +26,13 @@ export default function ScenePlayer(props: Readonly<ScenePlayerProps>) {
           : "You are die"}
       </h2>
       <div className="scenePlayer">
-        {parts.map((partObject) => {
+        {parts.map((part, index) => {
           return (
             <ObjectScene
-              key={partObject.part}
-              {...partObject}
+              key={part}
               tries={props.tries}
+              part={part}
+              numberConditionToShow={9 - index}
             />
           );
         })}
