@@ -1,4 +1,4 @@
-import { ChangeEvent, useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import ScenePlayer from "../ScenePlayer";
 import "./Board.css";
 import ButtonBox from "../ButtonBox";
@@ -9,10 +9,6 @@ export default function Board() {
   const wordToGuess = "HELLO";
   const textRef = useRef<HTMLSpanElement>(null);
 
-  const handleOnInputPlayerInput = (event: ChangeEvent<HTMLInputElement>) => {
-    setPlayerInput(event.target.value);
-  };
-
   useEffect(() => {
     const letters = wordToGuess.split("");
     if (playerInput && !letters.includes(playerInput)) {
@@ -22,7 +18,6 @@ export default function Board() {
       const text = textRef.current;
       text!.textContent = text!.textContent + playerInput;
     }
-    setPlayerInput("");
   }, [playerInput]);
 
   return (
@@ -30,13 +25,6 @@ export default function Board() {
       <ScenePlayer tries={tries} />
 
       <span ref={textRef}></span>
-
-      <input
-        disabled={tries === 0}
-        type="text"
-        onInput={handleOnInputPlayerInput}
-        value={playerInput}
-      />
 
       <ButtonBox setPlayerInput={setPlayerInput} tries={tries} />
     </section>
