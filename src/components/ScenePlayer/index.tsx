@@ -23,7 +23,7 @@ export default function ScenePlayer(props: Readonly<ScenePlayerProps>) {
       <h2>
         {props.tries > 0
           ? `You are still surviving ${props.tries}`
-          : "You are die"}
+          : "You are dead"}
       </h2>
       <div className="scenePlayer">
         {parts.map((part, index) => {
