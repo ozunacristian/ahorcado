@@ -20,6 +20,7 @@ interface ObjectSceneProps {
 export default function ObjectScene(props: Readonly<ObjectSceneProps>) {
   return (
     <div
+      data-testid={props.part}
       className={props.part}
       style={{
         backgroundColor:
