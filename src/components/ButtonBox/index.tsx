@@ -14,7 +14,6 @@ export default function ButtonBox(props: Readonly<ButtonBoxProps>) {
       {alphabet.map((letter) => {
         return (
           <KeyboardButton
-          data-testid={`keyboardButton-${letter}`} 
             key={letter}
             tries={props.tries}
             letter={letter}
