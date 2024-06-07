@@ -12,6 +12,7 @@ export default function KeyboardButton(props: Readonly<KeyboardButtonProps>) {
   return (
     <button
       disabled={props.tries <= 0}
+      data-testid={`keyboardButton-${props.letter}`}
       className="keyboardButton"
       onClick={() => {
         handleOnClick(props.letter);
