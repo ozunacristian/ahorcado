@@ -20,7 +20,9 @@ export default function ScenePlayer(props: Readonly<ScenePlayerProps>) {
 
   return (
     <>
-      <h2>
+      <h2
+      data-testid = "h2-ScenePlayer"
+      >
         {props.tries > 0
           ? `You are still surviving ${props.tries}`
           : "You are dead"}
