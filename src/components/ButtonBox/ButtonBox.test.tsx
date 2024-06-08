@@ -17,9 +17,11 @@ describe("ButtonBox", () => {
 
     buttonJ.click();
 
-    screen.debug();
+    //screen.debug();
 
     // should have disabled after click
     expect(buttonJ.getAttribute("disabled")).toBe("");
   });
 });
+
+
