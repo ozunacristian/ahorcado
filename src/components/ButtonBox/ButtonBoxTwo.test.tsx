@@ -4,7 +4,7 @@ import { render, screen, fireEvent } from "@testing-library/react";
 
 
 describe("ButtonBox", () => {
-  // prueba teclado
+  // keyboardtest
   it("All buttons should be disabled when game over", () => {
     render(
       <ButtonBox
@@ -17,11 +17,11 @@ describe("ButtonBox", () => {
     screen.debug();
     const buttons = screen.getAllByRole("button");
 
-    buttons.forEach(button => { //se recorre todas las teclas
-      // Se intenta hacer clic
+    buttons.forEach(button => {
+      // we clic
       fireEvent.click(button);
 
-      // Nos aseguramos de que esté desactivado
+      // We make sure that the button is deactivated.
       expect(button.getAttribute("disabled")).toBe("");
     });
   });
