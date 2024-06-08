@@ -24,7 +24,7 @@ export default function Board() {
     <section className="mainSection">
       <ScenePlayer tries={tries} />
 
-      <span ref={textRef}></span>
+      <span data-testid="text-guessed" ref={textRef}></span>
 
       <ButtonBox setPlayerInput={setPlayerInput} tries={tries} />
     </section>
